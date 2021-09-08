@@ -6,8 +6,8 @@ const App = () => {
   return (
     <View>
 
-      <Text style={{fontSize:50}}>Props</Text>
-      <Profile data={"Zachariah Jerobert"} email="jerome@abc.com" />
+      <Text style={{fontSize:40,color:'green',backgroundColor:'yellow'}}>Inline Style</Text>
+      
     </View>
   );
 };
