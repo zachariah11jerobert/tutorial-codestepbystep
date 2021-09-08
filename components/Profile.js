@@ -1,14 +1,18 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const Profile =(props) =>{
-  console.warn("props",props)
-      return(
-        <View style={{backgroundColor:'lightblue'}}>
-          <Text style={{fontSize:25}}>Profile Component</Text>
-          <Text style={{fontSize:20}}>{props.data}</Text>
-        </View>
-      )
-    }
+class Profile extends React.Component{
+  render(){
+    // can't change props data
+    // this.props.data="Hello"
+    return(
+      <View style={{backgroundColor:'lightgreen'}}>
+        <Text>Profile Component</Text>
+        <Text>Name : {this.props.data}</Text>
+        <Text>Email : {this.props.email}</Text>
+      </View>
+    )
+  }
+}
    
 export default Profile;

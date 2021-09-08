@@ -7,7 +7,7 @@ const App = () => {
     <View>
 
       <Text style={{fontSize:50}}>Props</Text>
-      <Profile data={"Zachariah Jerobert"}/>
+      <Profile data={"Zachariah Jerobert"} email="jerome@abc.com" />
     </View>
   );
 };
