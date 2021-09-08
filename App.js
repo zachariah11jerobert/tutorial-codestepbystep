@@ -1,15 +1,13 @@
-import React, {useState} from 'react';
-import {View, Text, Button} from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
+import Profile from './components/Profile';
 
 const App = () => {
-  const [data, setData] = useState(0);
   return (
-    <View style={{margin: 20}}>
-      <Button onPress={() => setData(data - 1)} title="Decrease" />
+    <View>
 
-      <Text style={{fontSize: 100}}>{data}</Text>
-
-      <Button onPress={() => setData(data + 1)} title="Increase" />
+      <Text style={{fontSize:50}}>Props</Text>
+      <Profile data={"Zachariah Jerobert"}/>
     </View>
   );
 };

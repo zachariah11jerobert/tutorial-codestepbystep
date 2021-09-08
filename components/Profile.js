@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text,TextInput} from 'react-native';
+import {View, Text} from 'react-native';
 
-class Profile extends React.Component{
-    render(){
+const Profile =(props) =>{
+  console.warn("props",props)
       return(
         <View style={{backgroundColor:'lightblue'}}>
           <Text style={{fontSize:25}}>Profile Component</Text>
-          <TextInput placeholder="Enter Name"/>
+          <Text style={{fontSize:20}}>{props.data}</Text>
         </View>
       )
     }
-   }
+   
 export default Profile;
