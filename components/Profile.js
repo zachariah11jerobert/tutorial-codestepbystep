@@ -9,4 +9,12 @@ const Profile=()=>{
     )
 }
 
+export const About=()=>{
+    return(
+        <View>
+            <Text style={{fontSize:50}}>About Component</Text>
+        </View>
+    )
+}
+
 export default Profile;
