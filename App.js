@@ -1,18 +1,17 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import externalStyle from './style/externalStyle';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const App = () => {
-  return (
-    <View>
-      <Text
-      style={[externalStyle.textStyle,externalStyle.textBg]}
-      >External Style</Text>
-      <Text
-      style={externalStyle.textStyle}
-      >Without Background</Text>
-    </View>
-  );
-};
+class App extends React.Component {
+  render() {
+    return (
+      <View style={{flex: 1, margin: 70}}>
+        <Text style={{fontSize:50}}>icons</Text>
+        <FontAwesome5 name={'comments'} size={100} color="red"/>
+        <FontAwesome5 name={'google'} size={100} color="blue"/>
+      </View>
+    );
+  }
+}
 
 export default App;
