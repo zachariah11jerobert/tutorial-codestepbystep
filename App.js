@@ -1,15 +1,16 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import Profile , {About} from './components/Profile';
+import Profile from './components/Profile';
 
-const App = () => {
-  return (
-    <View style={{flex: 1, margin: 40}}>
-      <Text style={{fontSize: 40}}>Components</Text>
-      <Profile />
-      <About />
-    </View>
-  );
-};
+class App extends React.Component{
+ render(){
+   return(
+     <View>
+       <Text style={{fontSize:50}}>Class Component</Text>
+       <Profile/>
+     </View>
+   )
+ }
+}
 
 export default App;
