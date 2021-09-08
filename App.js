@@ -1,23 +1,18 @@
 import React from 'react';
-import {View, Text,StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
+import externalStyle from './style/externalStyle';
 
 const App = () => {
   return (
     <View>
-      <Text style={[styles.headText,styles.headColors]}>Inline Style</Text>
+      <Text
+      style={[externalStyle.textStyle,externalStyle.textBg]}
+      >External Style</Text>
+      <Text
+      style={externalStyle.textStyle}
+      >Without Background</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  headText: {
-    fontSize: 40,
-    textAlign:'center'
-  },
-  headColors:{
-    color: 'green',
-    backgroundColor: 'yellow',
-  }
-});
 
 export default App;
