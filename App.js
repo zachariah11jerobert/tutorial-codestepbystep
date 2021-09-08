@@ -4,7 +4,7 @@ import {View, Text,StyleSheet} from 'react-native';
 const App = () => {
   return (
     <View>
-      <Text style={styles.headText}>Inline Style</Text>
+      <Text style={[styles.headText,styles.headColors]}>Inline Style</Text>
     </View>
   );
 };
@@ -12,10 +12,12 @@ const App = () => {
 const styles = StyleSheet.create({
   headText: {
     fontSize: 40,
-    color: 'green',
-    backgroundColor: 'yellow',
     textAlign:'center'
   },
+  headColors:{
+    color: 'green',
+    backgroundColor: 'yellow',
+  }
 });
 
 export default App;
