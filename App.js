@@ -1,15 +1,21 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import Profile from './components/Profile';
+import {View, Text,StyleSheet} from 'react-native';
 
 const App = () => {
   return (
     <View>
-
-      <Text style={{fontSize:40,color:'green',backgroundColor:'yellow'}}>Inline Style</Text>
-      
+      <Text style={styles.headText}>Inline Style</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  headText: {
+    fontSize: 40,
+    color: 'green',
+    backgroundColor: 'yellow',
+    textAlign:'center'
+  },
+});
 
 export default App;
