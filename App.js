@@ -1,23 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {View, Text, Button} from 'react-native';
+import Product from './components/Product';
 
 function App() {
-  const [count, setCount] = useState(1);
-  const [data, setData] = useState('initial data');
-
-  // use effect invoke whenever the state changes
-  useEffect(() => {
-    console.warn('test use effect', count);
-    if (count == 5) {
-      setData('update data');
-    }
-  });
+  // As state change and the data pass as props then we got console.warm mesaages
+const [count,setCount]=useState(1);
 
   return (
     <View style={{flex: 1, marginTop: 100}}>
-      <Text style={{fontSize: 70}}>{count}</Text>
-      <Text style={{fontSize: 70}}>{data}</Text>
-      <Button title="update state" onPress={() => setCount(count + 1)} />
+       <Product data={count} />
+       <Button title="update state" onPress={()=>{setCount(count+1)}}/>
     </View>
   );
 }
