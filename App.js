@@ -12,6 +12,8 @@ const App = () => {
       // hideArrows
       // hideDayNames
       // hideExtraDays
+      minDate={"2021-09-05"}
+      maxDate={"2021-10-11"}
       />
     </>
   );
