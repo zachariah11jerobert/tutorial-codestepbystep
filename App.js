@@ -1,14 +1,26 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {View, Text, Modal} from 'react-native';
 
 class App extends React.Component {
   render() {
     return (
-      <View style={{flex: 1, margin: 70}}>
-        <Text style={{fontSize:50}}>icons</Text>
-        <FontAwesome5 name={'comments'} size={100} color="red"/>
-        <FontAwesome5 name={'google'} size={100} color="blue"/>
+      <View style={{flex: 1, marginTop: 100, backgroundColor: 'yellow'}}>
+        <Text style={{fontSize: 80}}>Normal Screen Text</Text>
+
+        <Modal transparent={true} visible={true}>
+          <View style={{backgroundColor: '#000000aa', flex: 1}}>
+            <View
+              style={{
+                backgroundColor: '#ffffff',
+                margin: 50,
+                padding: 40,
+                borderRadius: 10,
+                flex: 1,
+              }}>
+              <Text style={{fontSize: 50}}>Modal Text</Text>
+            </View>
+          </View>
+        </Modal>
       </View>
     );
   }
