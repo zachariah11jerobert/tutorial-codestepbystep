@@ -1,16 +1,14 @@
 import React from 'react';
 
-import {
-  Text
-} from 'react-native';
+import {Text} from 'react-native';
+import {Calendar} from 'react-native-calendars';
 
-const App = () =>{
-  return(
+const App = () => {
+  return (
     <>
-      <Text>React Native Calendar</Text>
+      <Calendar />
     </>
-  )
-}
-
+  );
+};
 
 export default App;
