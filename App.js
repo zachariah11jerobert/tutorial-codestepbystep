@@ -1,37 +1,25 @@
-import React from 'react';
-import {View, Text, Modal, Button} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Button} from 'react-native';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      show: false,
-    };
-  }
+function App() {
+  const [count, setCount] = useState(1);
+  const [data, setData] = useState('initial data');
 
-  render() {
-    return (
-      <View style={{flex: 1, marginTop: 100, backgroundColor: 'yellow'}}>
-        <Text style={{fontSize: 80}}>Normal Screen Text</Text>
-        <Button title="show modal" onPress={() => this.setState({show: true})} />
-        <Modal transparent={true} visible={this.state.show}>
-          <View style={{backgroundColor: '#000000aa', flex: 1}}>
-            <View
-              style={{
-                backgroundColor: '#ffffff',
-                margin: 50,
-                padding: 40,
-                borderRadius: 10,
-                flex: 1,
-              }}>
-              <Text style={{fontSize: 50}}>Modal Text</Text>
-              <Button title="close modal" onPress={() => this.setState({show: false})} />
-            </View>
-          </View>
-        </Modal>
-      </View>
-    );
-  }
+  // use effect invoke whenever the state changes
+  useEffect(() => {
+    console.warn('test use effect', count);
+    if (count == 5) {
+      setData('update data');
+    }
+  });
+
+  return (
+    <View style={{flex: 1, marginTop: 100}}>
+      <Text style={{fontSize: 70}}>{count}</Text>
+      <Text style={{fontSize: 70}}>{data}</Text>
+      <Button title="update state" onPress={() => setCount(count + 1)} />
+    </View>
+  );
 }
 
 export default App;
