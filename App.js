@@ -6,7 +6,13 @@ import {Calendar} from 'react-native-calendars';
 const App = () => {
   return (
     <>
-      <Calendar disableArrowLeft disableArrowRight />
+      <Calendar 
+      //disableArrowLeft 
+      //disableArrowRight
+      // hideArrows
+      // hideDayNames
+      // hideExtraDays
+      />
     </>
   );
 };
