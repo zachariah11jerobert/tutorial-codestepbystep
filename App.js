@@ -1,17 +1,37 @@
-import React, {useState} from 'react';
-import {View, Text, Button} from 'react-native';
-import Product from './components/Product';
+import React from 'react';
+import {View, Text, FlatList} from 'react-native';
 
-function App() {
-  // As state change and the data pass as props then we got console.warm mesaages
-const [count,setCount]=useState(1);
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+  }
 
-  return (
-    <View style={{flex: 1, marginTop: 100}}>
-       <Product data={count} />
-       <Button title="update state" onPress={()=>{setCount(count+1)}}/>
-    </View>
-  );
+  componentDidMount() {
+    this.apiCall();
+  }
+
+  async apiCall() {
+    let resp = await fetch('https://reactnative.dev/movies.json');
+    let respJson = await resp.json();
+    console.log(respJson);
+    this.setState({data: respJson.movies});
+  }
+
+  render() {
+    return (
+      <View>
+        <Text style={{fontSize: 100}}>API Call</Text>
+        <FlatList
+          data={this.state.data}
+          renderItem={({item}) => <Text
+          style={{fontSize:40,backgroundColor:'skyblue',margin:15}}
+          >{item.title}</Text>}></FlatList>
+      </View>
+    );
+  }
 }
 
 export default App;
