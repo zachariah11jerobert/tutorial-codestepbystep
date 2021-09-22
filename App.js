@@ -1,12 +1,12 @@
 import React from 'react';
-
-import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import TabNavigator from './src/navigation/TabNavigator';
 
 const App = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center',justifyContent:'center'}}>
-      <Text style={{fontSize: 50}}> App ready</Text>
-    </View>
+    <NavigationContainer>
+      <TabNavigator />
+    </NavigationContainer>
   );
 };
 
